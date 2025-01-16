@@ -1,3 +1,5 @@
 .DS_Store
 .idea
 minter.json
+minter-mainnet.json
+node_modules

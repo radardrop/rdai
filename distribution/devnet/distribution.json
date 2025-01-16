@@ -1,0 +1,10 @@
+{
+  "supply": 90,
+  "allocations": [
+    {
+      "name": "Team",
+      "amount": 90,
+      "address": "6k7LvmC8cisSMeNz6xK3Lw81rMfPKrjLn5uBNNUMiJE5"
+    }
+  ]
+}

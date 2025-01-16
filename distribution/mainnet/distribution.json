@@ -1,0 +1,55 @@
+{
+  "supply": 1000000000,
+  "allocations": [
+    {
+      "name": "Seed",
+      "amount": 200000000,
+      "address": "HUx2NJrhB1NPq4GoZhzbqhivddSCehSk4ZgYBsDMchD2"
+    },
+    {
+      "name": "Seedify Opens",
+      "amount": 57142857,
+      "address": "2Kkv61ZqDwPRfUMFtPqow1Lc6syo3XpQd5m6XxvgMqeK"
+    },
+    {
+      "name": "KOLs",
+      "amount": 28571429,
+      "address": "9CLmnzQ7ZWKJzW64N8hHKD43mtWU95HK25G6LxFhnsJ3"
+    },
+    {
+      "name": "Public",
+      "amount": 342857142,
+      "address": "H9q8UybDYQQVreaef2yCFuSBUhD2TJkMSBZnJGdFTGzk"
+    },
+    {
+      "name": "Development",
+      "amount": 60000000,
+      "address": "4dneaCiLegSPLFvTrjV8ChLM1JTmvguFMmXHPU65PxtQ"
+    },
+    {
+      "name": "Marketing",
+      "amount": 61428572,
+      "address": "5V5kxfKuzrVCBEBqq6CwKoWd4uNib2sTWdoNv9QTBxzF"
+    },
+    {
+      "name": "Liquidity",
+      "amount": 70000000,
+      "address": "DwEF49DW9vcQJdFkU1SzFKtNzCQoAaN8p5YrJAcFbBhP"
+    },
+    {
+      "name": "Incentives",
+      "amount": 10000000,
+      "address": "FQdQKns89nzx8UnWQHs1VQRRYQLZGGNmBAkaeDEbcmhd"
+    },
+    {
+      "name": "Staking",
+      "amount": 70000000,
+      "address": "DD2A2Qi7zzUj1VHcuK3L7Pmog3DARFa55c67bA1vqiZL"
+    },
+    {
+      "name": "Team",
+      "amount": 100000000,
+      "address": "AoUQoXh6LZ4oVUAPqbw5aTPSMDwNBQMbvo7XAZ3wHecL"
+    }
+  ]
+}

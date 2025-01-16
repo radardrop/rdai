@@ -1,0 +1,26 @@
+{
+  "name": "rdai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "cli": "ts-node ./cli/main.ts"
+  },
+  "keywords": [],
+  "author": "RadarDrop <team@radardrop.ai>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.6",
+    "prettier": "^3.4.2"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0",
+    "colors": "^1.4.0",
+    "commander": "^13.0.0",
+    "ts-node": "^10.9.2"
+  }
+}
