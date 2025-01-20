@@ -5,18 +5,12 @@ import { CommandBaseOptions } from "../type/base.type";
 import { Distribution } from "../type/distribution.type";
 import colors from "colors";
 import {
-  Connection,
-  Keypair,
   PublicKey,
   sendAndConfirmTransaction,
   Transaction,
 } from "@solana/web3.js";
 import {
-  ASSOCIATED_TOKEN_PROGRAM_ID,
-  createAccount,
-  createInitializeAccountInstruction,
   createTransferInstruction,
-  getAccount,
   getMint,
   getOrCreateAssociatedTokenAccount,
   TOKEN_PROGRAM_ID,
@@ -54,76 +48,8 @@ export const setupDistributionCommand = (program: Command) => {
     );
 };
 
-/**
- * If there's a token account already owned by `ownerPDA` for `mint`,
- * return its public key. Otherwise, return null.
- */
-const findExistingTokenAccount = (
-  ownerPDA: PublicKey,
-  mint: PublicKey,
-): PublicKey | null => {
-  try {
-    const [ataAddress] = PublicKey.findProgramAddressSync(
-      [ownerPDA.toBuffer(), TOKEN_PROGRAM_ID.toBuffer(), mint.toBuffer()],
-      ASSOCIATED_TOKEN_PROGRAM_ID,
-    );
-
-    return ataAddress;
-  } catch {
-    return null;
-  }
-};
-
-export const createPdaTokenAccount = async (
-  connection: Connection,
-  payer: Keypair,
-  mint: PublicKey,
-  ownerPDA: PublicKey,
-) => {
-  console.log(
-    colors.cyan(`\nCreating or reusing PDA account for ${ownerPDA.toBase58()}`),
-  );
-
-  // let account = findExistingTokenAccount(ownerPDA, mint);
-
-  const tokenAccountKeypair = Keypair.generate();
-  const account = await createAccount(
-    connection,
-    payer,
-    mint,
-    ownerPDA, // The new token account's owner
-    tokenAccountKeypair,
-  );
-
-  const accountInfo = await getAccount(connection, account);
-
-  if (!accountInfo.isInitialized) {
-    const initAccountIx = createInitializeAccountInstruction(
-      tokenAccountKeypair.publicKey,
-      mint,
-      ownerPDA,
-      TOKEN_PROGRAM_ID,
-    );
-
-    const tx = new Transaction().add(initAccountIx);
-    const sig = await sendAndConfirmTransaction(connection, tx, [payer], {
-      commitment: "confirmed",
-    });
-
-    console.log(
-      colors.green(
-        `\nInitialized account ${tokenAccountKeypair.publicKey.toBase58()} for ${ownerPDA.toBase58()}\nTx: ${sig}`,
-      ),
-    );
-
-    return tokenAccountKeypair.publicKey;
-  }
-
-  return accountInfo.address;
-};
-
 const invoke = async (params: CommandParams) => {
-  const { connection, rpc, wallet } = initCommand(params);
+  const { connection, wallet } = initCommand(params);
 
   console.log(
     colors.underline(
