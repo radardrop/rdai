@@ -12,19 +12,15 @@ import {
   Transaction,
 } from "@solana/web3.js";
 import {
-  ACCOUNT_SIZE,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   createAccount,
   createInitializeAccountInstruction,
-  createTransferCheckedInstruction,
   createTransferInstruction,
   getAccount,
-  getMinimumBalanceForRentExemptAccount,
   getMint,
   getOrCreateAssociatedTokenAccount,
   TOKEN_PROGRAM_ID,
 } from "@solana/spl-token";
-import { exec } from "node:child_process";
 
 type CommandOptions = {
   confirm?: true;
