@@ -66,6 +66,12 @@ To prevent future mint of the token, run the following command:
 spl-token authorize <token_address> mint --disable
 ```
 
+To prevent the minter to freeze the token, run the following command:
+
+```bash
+spl-token authorize <token_address> freeze --disable
+```
+
 ## Official $RDAI token deployed on Mainnet
 
 - Minter Address: `GCBVTsuMngzLMuYb8TfzKQSyj7nmtJretUodiRVU2iCe`
@@ -73,6 +79,7 @@ spl-token authorize <token_address> mint --disable
 - Mint: `94mWLUvaNcDM1BZTC4yaNRBbKMgQtLEz1GDHacbZsxDM`
 - Metadata: `3rmMjFxawqi2GT4VqhVs7vpsEthGbXzkEzwpri2fdn7b`
 - Mint Disabled Signature: `772Lgfp9LckCDXaSpAc7R396Cro6dvYctn3utghqLPDjyo2fLC3juorQkLLumekvH4ZcYt5oznZRfxSeu8SriKQ`
+- Freeze Disabled Signature: `4nccTR2F8xioQj463MZwADHLfMayuvd2eCftPVk4Dw7ZtGPbWjPoHS9xDhPC4wbBCwoqrjex87PFWEzsKgUznBZf`
 
 ### Distribution Command:
 
